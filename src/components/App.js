@@ -32,15 +32,16 @@ function App() {
   };
 
   return (
-    <>
+    <section>
       <div className="text-center m-12">
-        <h1 className="text-4xl text-gray-700 font-bold">Todo App</h1>
+        <h1 className="text-4xl text-slate-100 font-bold">Todo App</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="enterTodo"
+            value={todo}
             onChange={(e) => handleChange(e)}
-            className="border-2 border-black rounded-md m-4 py-2 px-4 text-center"
+            className=" rounded-md m-4 py-2 px-4 text-center bg-gradient-to-r from-blue-100 to-transparent font-bold"
             placeholder="What needs to be done!"
           ></input>
         </form>
@@ -59,14 +60,14 @@ function App() {
                   onChange={() => handleToggle(id)}
                   className="w-6 h-6 text-green-400 bg-gray-100 rounded-full border-gray-300 focus:ring-green-300 focus:ring-2 shadow-inner"
                 />
-                <p>{todo}</p>
+                <p className='text-slate-100'>{todo}</p>
               </div>
               <button onClick={() => handleDelete(id)}>❌</button>
             </li>
           );
         })}
       </div>
-    </>
+      </section>
   );
 }
 export default App;
